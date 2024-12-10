@@ -1,0 +1,249 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/assets/css/bulma.css">
+    <link rel="stylesheet" href="/assets/css/bulma-list.css">
+    
+    <style>
+    
+      .is-horizontal-center {
+        justify-content: center;
+      }
+
+      .is-100x100{
+        width: 100px;
+        height: 100px;
+       
+      }
+
+      .is-shadow{
+        box-shadow: 0px 0px 2px #000000;
+      }
+
+      .color-blue{
+        background-color: #999DA0;
+      }
+
+      .text-para-2 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* number of lines to show */
+                  line-clamp: 2; 
+          -webkit-box-orient: vertical;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    {% include navigation.html  %}
+    
+    <section class="section">
+      <h1 class="title">Section</h1>
+      
+      <h2 class="subtitle">
+        A simple container to divide your page into <strong>sections</strong>, like
+        the one you're currently reading.
+      </h2>
+      <!-- has-background-primary -->
+      <div class="columns">
+        <div class="column is-four-fifths">
+          <div class="list">
+            <div class="list-item box">
+              <div class="list-item-content px-4">
+                <div class="list-item-title is-flex is-justify-content-space-between">
+                  <span>React Native — dotenv is not working | Fail to implement .env</span>
+                </div>
+                <div class="list-item-description text-para-2">When you deploy your code to cloud server, it is common to save the secret key in .env to avoid leakage of important credential key, URL and also ease to configure the variable.</div>
+                <span class="has-text-weight-normal has-text-grey mt-4">23 Aug 2024</span>
+              </div>
+              <div class="list-item-image">
+                <figure class="image is-128x128">
+                  <img src="/assets/images/profile.jpg">
+                </figure>
+              </div>
+            </div>
+          
+            <div class="list-item box">
+              <div class="list-item-content px-4">
+                <div class="list-item-title is-flex is-justify-content-space-between">
+                  <span>React Native + Firebase — Chat APP Template | Summarise the Use of Google Firebase — Initial Set Up + Authentication + Firestore in a Chat App</span>
+                </div>
+                <div class="list-item-description text-para-2">Are you tired of the current dating and friend meeting apps on the market? Do you crave a new user interface or system that better suits your needs? Why not create your own? In this article, we’ll show you how to make a simple yet dynamic chat and friend meeting app using React Native. This means that the app can be created for both iOS and Android.</div>
+                <span class="has-text-weight-normal has-text-grey mt-4">23 Aug 2024</span>
+              </div>
+              <div class="list-item-image">
+                <figure class="image is-128x128">
+                  <img src="/assets/images/profile.jpg">
+                </figure>
+              </div>
+            </div>
+          
+            <div class="list-item box">
+              <div class="list-item-image">
+                <figure class="image is-64x64">
+                  <img class="is-rounded" src="https://via.placeholder.com/128x128.png?text=Image">
+                </figure>
+              </div>
+          
+              <div class="list-item-content">
+                <div class="list-item-title">List item</div>
+                <div class="list-item-description">List item description</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-hidden-mobile has-background-info">
+          <div class="px-5 py-5">
+            <!-- <h4 class="has-text-centered has-text-weight-semibold is-size-3">Author</h4> -->
+            <div class="is-flex is-horizontal-center py-2">
+              <figure class="image is-100x100">
+                <img class="is-rounded is-shadow" src="/assets/images/profile.jpg" />
+              </figure>
+            </div>
+            <h3 class="has-text-centered">Katrina Shui</h3>
+            <hr class="my-2 mx-4 color-blue">
+            <p class="has-text-centered is-size-7 mb-1">
+              Someone who want to be good in coding, enjoy the freedom provided by coding but still on the path to be good. 
+              This is a blog to share the whole journey!
+            </p>
+
+          
+            <h4 class="mt-4 is-size-7">Build</h4>
+            <ul class="is-size-7">
+                <li class="current"><a href="/docs/usage/">
+                    Command Line Usage
+                  </a>
+                </li>
+              
+                <li><a href="/docs/configuration/">
+                    Configuration
+                  </a>
+                </li>
+              
+                <li><a href="/docs/rendering-process/">
+                    Rendering Process
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h4 class="mt-4 is-size-7">Content</h4>
+            <ul class="is-size-7">
+                <li><a href="/docs/pages/">
+                    Pages
+                  </a>
+                </li>
+              
+                <li><a href="/docs/posts/">
+                    Posts
+                  </a>
+                </li>
+              
+                <li><a href="/docs/front-matter/">
+                    Front Matter
+                  </a>
+                </li>
+              
+                <li><a href="/docs/collections/">
+                    Collections
+                  </a>
+                </li>
+              
+                <li><a href="/docs/datafiles/">
+                    Data Files
+                  </a>
+                </li>
+              
+                <li><a href="/docs/assets/">
+                    Assets
+                  </a>
+                </li>
+              
+                <li><a href="/docs/static-files/">
+                    Static Files
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h4 class="mt-4 is-size-7">Site Structure</h4>
+            <ul class="is-size-7">
+                <li><a href="/docs/structure/">
+                    Directory Structure
+                  </a>
+                </li>
+              
+                <li><a href="/docs/liquid/">
+                    Liquid
+                  </a>
+                </li>
+              
+                <li><a href="/docs/variables/">
+                    Variables
+                  </a>
+                </li>
+              
+                <li><a href="/docs/includes/">
+                    Includes
+                  </a>
+                </li>
+              
+                <li><a href="/docs/layouts/">
+                    Layouts
+                  </a>
+                </li>
+              
+                <li><a href="/docs/permalinks/">
+                    Permalinks
+                  </a>
+                </li>
+              
+                <li><a href="/docs/themes/">
+                    Themes
+                  </a>
+                </li>
+              
+                <li><a href="/docs/pagination/">
+                    Pagination
+                  </a>
+                </li>
+              
+            </ul>
+          
+            <h4 class="mt-4 is-size-7">Guides</h4>
+            <ul class="is-size-7">
+                <li><a href="/docs/plugins/">
+                    Plugins
+                  </a>
+                </li>
+              
+                <li><a href="/docs/migrations/">
+                    Blog Migrations
+                  </a>
+                </li>
+              
+                <li><a href="/docs/upgrading/">
+                    Upgrading
+                  </a>
+                </li>
+              
+                <li><a href="/docs/deployment/">
+                    Deployment
+                  </a>
+                </li>
+              
+            </ul>
+             
+          </div>
+        </div>
+    </div>
+      
+    </section>
+ 
+  </body>
+</html>

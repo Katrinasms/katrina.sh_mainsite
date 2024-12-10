@@ -1,0 +1,24 @@
+title: Katrina's Code Playground
+email: katrinashui2023@gmail.com
+description:
+  en: Sharing a journey code starting from zero 
+  ch: 分享從零度開始的編碼經歷
+baseurl: ""
+url: ""
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Multilingual settings
+languages: ["en", "ch"]
+default_lang: "en"
+exclude_from_localization: ["assets"]
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:language/:year/:month/:day/:title/
