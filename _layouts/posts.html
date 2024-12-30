@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Start With K</title>
+    <link rel="stylesheet" href="/assets/css/bulma.css">
+    <link rel="stylesheet" href="/assets/css/style-ori.min.css">
+    <link rel="stylesheet" href="/assets/css/style-article.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo/K.png" >
+  </head>
+  <body>
+    {% include navigation.html  %}
+    <main class="content-wrapper">
+        <article class=" mx-6">
+            <h1 class="is-size-3 has-text-weight-bold mt-4 mb-3">{{ page.title }}</h1>
+            <section class="container content content-type--std-intro ">
+                {{ content }}
+            </section>
+
+     
+    </article>
+    </main>
+  </body>
+</html>
