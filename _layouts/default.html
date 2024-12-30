@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.default_lang }}">
-  {% include head.html %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Start With K</title>
+    <link rel="stylesheet" href="/assets/css/bulma.css">
+    <!-- <link rel="stylesheet" href="/assets/css/bulma-list.css"> -->
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo/K.png" >
+  </head>
   <body>
-    {% include header.html %}
-    
+    {% include navigation.html  %}
     <main class="section">
       <div class="container">
         {{ content }}
       </div>
     </main>
-
-    {% include footer.html %}
-    
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequential Fade In Animation</title>
+    <style>
+        .animate-in {
+            transition: 900ms ease-in-out;
+            opacity: 0;
+        }
+
+        .animate-in.visible {
+            opacity: 1;
+        }
+
+        /* Demo styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: #f0f0f0;
+            padding: 50px;
+            margin: 50px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section animate-in" data-delay="0">
+            <h2>Section 1</h2>
+            <p>This section will fade in first.</p>
+        </div>
+
+        <div class="section animate-in" data-delay="300">
+            <h2>Section 2</h2>
+            <p>This section will fade in second.</p>
+        </div>
+
+        <div class="section animate-in" data-delay="600">
+            <h2>Section 3</h2>
+            <p>This section will fade in last.</p>
+        </div>
+    </div>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        function onElementOnScreen(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = parseInt(entry.target.dataset.delay) || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+
+        const observer = new IntersectionObserver(onElementOnScreen, observerOptions);
+
+        // Observe all elements with animate-in class
+        document.querySelectorAll('.animate-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
