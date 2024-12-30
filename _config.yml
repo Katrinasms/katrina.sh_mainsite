@@ -1,4 +1,4 @@
-title: Katrina's Code Playground
+title: Start with K
 email: katrinashui2023@gmail.com
 description:
   en: Sharing a journey code starting from zero 
@@ -10,15 +10,29 @@ url: ""
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap
+
 
 # Multilingual settings
 languages: ["en", "ch"]
 default_lang: "en"
 exclude_from_localization: ["assets"]
 
-# Collections
 collections:
-  posts:
+  enPosts:
     output: true
-    permalink: /:language/:year/:month/:day/:title/
+    permalink: /en/post/:name
+  enGlossary:
+    output: true
+    permalink: /en/glossary/:name
+collections_dir: en
+
+defaults:
+  - scope:
+      path: "en/_enPosts"
+      type: posts
+    values:
+      layout: posts
+  - scope:
+      path: "en/_enGlossary"
+    values:
+      layout: default

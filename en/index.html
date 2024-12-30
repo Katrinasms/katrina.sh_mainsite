@@ -4,9 +4,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Start With K</title>
     <link rel="stylesheet" href="/assets/css/bulma.css">
     <link rel="stylesheet" href="/assets/css/bulma-list.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo/K.png" >
     
     <style>
     
@@ -36,48 +37,66 @@
           -webkit-box-orient: vertical;
       }
 
+      .text-para-3 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3; /* number of lines to show */
+                  line-clamp: 3; 
+          -webkit-box-orient: vertical;
+      }
 
+      .has-border-left {
+        border-left: 0.5px ridge 	#b5b5b5;
+      }
+
+      .has-object-fit-cover{
+      
+        object-fit: cover;
+
+      }
+
+
+    </style>
   </head>
   <body>
     {% include navigation.html  %}
-    
-    <section class="section">
-      <h1 class="title">Section</h1>
+    <section class="section py-5">
+      <!-- <h1 class="title">Section</h1>
       
       <h2 class="subtitle">
         A simple container to divide your page into <strong>sections</strong>, like
         the one you're currently reading.
-      </h2>
+      </h2> -->
       <!-- has-background-primary -->
       <div class="columns">
         <div class="column is-four-fifths">
           <div class="list">
             <div class="list-item box">
               <div class="list-item-content px-4">
-                <div class="list-item-title is-flex is-justify-content-space-between">
-                  <span>React Native — dotenv is not working | Fail to implement .env</span>
+                <div class="list-item-title is-flex is-justify-content-space-between text-para-3 ">
+                  <p>React Native — dotenv is not working | Fail to implement .env</p>
                 </div>
                 <div class="list-item-description text-para-2">When you deploy your code to cloud server, it is common to save the secret key in .env to avoid leakage of important credential key, URL and also ease to configure the variable.</div>
                 <span class="has-text-weight-normal has-text-grey mt-4">23 Aug 2024</span>
               </div>
               <div class="list-item-image">
                 <figure class="image is-128x128">
-                  <img src="/assets/images/profile.jpg">
+                  <img class=" has-object-fit-cover" style="height: 100%;" src="/assets/images/blog/penguin.webp">
                 </figure>
               </div>
             </div>
           
             <div class="list-item box">
               <div class="list-item-content px-4">
-                <div class="list-item-title is-flex is-justify-content-space-between">
-                  <span>React Native + Firebase — Chat APP Template | Summarise the Use of Google Firebase — Initial Set Up + Authentication + Firestore in a Chat App</span>
+                <div class="list-item-title is-flex is-justify-content-space-between ">
+                  <p class="text-para-3 ">React Native + Firebase — Chat APP Template | Summarise the Use of Google Firebase — Initial Set Up + Authentication + Firestore in a Chat App</p>
                 </div>
                 <div class="list-item-description text-para-2">Are you tired of the current dating and friend meeting apps on the market? Do you crave a new user interface or system that better suits your needs? Why not create your own? In this article, we’ll show you how to make a simple yet dynamic chat and friend meeting app using React Native. This means that the app can be created for both iOS and Android.</div>
                 <span class="has-text-weight-normal has-text-grey mt-4">23 Aug 2024</span>
               </div>
               <div class="list-item-image">
                 <figure class="image is-128x128">
-                  <img src="/assets/images/profile.jpg">
+                  <img class=" has-object-fit-cover" style="height: 100%;" src="/assets/images/blog/chat.webp">
                 </figure>
               </div>
             </div>
@@ -94,9 +113,35 @@
                 <div class="list-item-description">List item description</div>
               </div>
             </div>
+            <div class="list-item box">
+              <div class="list-item-content px-4">
+                <div class="list-item-title is-flex is-justify-content-space-between ">
+                  <p class="text-para-3 ">React Native + Firebase — Chat APP Template | Summarise the Use of Google Firebase — Initial Set Up + Authentication + Firestore in a Chat App</p>
+                </div>
+                <div class="list-item-description text-para-2">Are you tired of the current dating and friend meeting apps on the market? Do you crave a new user interface or system that better suits your needs? Why not create your own? In this article, we’ll show you how to make a simple yet dynamic chat and friend meeting app using React Native. This means that the app can be created for both iOS and Android.</div>
+                <span class="has-text-weight-normal has-text-grey mt-4">23 Aug 2024</span>
+              </div>
+              <div class="list-item-image">
+                <figure class="image is-128x128">
+                  <img class=" has-object-fit-cover" style="height: 100%;" src="/assets/images/blog/chat.webp">
+                </figure>
+              </div>
+            </div>
+            {% for post in site.enPosts %}
+   
+              {% include listBox.html post=post %}
+            {% endfor %}
+
+            {% for post in site.enGlossary %}
+            <p>{{post.title}}</p>
+          {% endfor %}
+
+            
           </div>
         </div>
-        <div class="column is-hidden-mobile has-background-white-bis">
+
+        <div class="column is-hidden-mobile  has-background-white-bis">
+
           <div class="px-5 py-5">
             <!-- <h4 class="has-text-centered has-text-weight-semibold is-size-3">Author</h4> -->
             <div class="is-flex is-horizontal-center py-2">
@@ -112,7 +157,7 @@
             </p>
 
           
-            <h4 class="mt-4 is-size-7">Build</h4>
+            <!-- <h4 class="mt-4 is-size-7">Build</h4>
             <ul class="is-size-7">
                 <li class="current"><a href="/docs/usage/">
                     Command Line Usage
@@ -129,9 +174,9 @@
                   </a>
                 </li>
               
-            </ul>
+            </ul> -->
           
-            <h4 class="mt-4 is-size-7">Content</h4>
+            <!-- <h4 class="mt-4 is-size-7">Content</h4>
             <ul class="is-size-7">
                 <li><a href="/docs/pages/">
                     Pages
@@ -236,7 +281,7 @@
                   </a>
                 </li>
               
-            </ul>
+            </ul> -->
              
           </div>
         </div>
