@@ -56,6 +56,8 @@
       }
 
     </style>
+
+    </style>
   </head>
   <body>
     {% include navigation.html  %}
@@ -126,6 +128,16 @@
                 </figure>
               </div>
             </div>
+            {% for post in site.enPosts %}
+   
+              {% include listBox.html post=post %}
+            {% endfor %}
+
+            {% for post in site.enGlossary %}
+            <p>{{post.title}}</p>
+          {% endfor %}
+
+            
           </div>
         </div>
         <div class="column is-hidden-mobile has-background-white-bis">
@@ -144,7 +156,7 @@
             </p>
 
           
-            <h4 class="mt-4 is-size-7">Build</h4>
+            <!-- <h4 class="mt-4 is-size-7">Build</h4>
             <ul class="is-size-7">
                 <li class="current"><a href="/docs/usage/">
                     Command Line Usage
@@ -161,7 +173,7 @@
                   </a>
                 </li>
               
-            </ul>
+            </ul> -->
           
             <!-- <h4 class="mt-4 is-size-7">Content</h4>
             <ul class="is-size-7">
