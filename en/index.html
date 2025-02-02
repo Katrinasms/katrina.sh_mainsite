@@ -71,7 +71,7 @@
       <div class="columns">
         <div class="column is-four-fifths">
           <div class="list">
-            <div class="list-item box">
+            <!-- <div class="list-item box">
               <div class="list-item-content px-4">
                 <div class="list-item-title is-flex is-justify-content-space-between text-para-3 ">
                   <p>React Native — dotenv is not working | Fail to implement .env</p>
@@ -126,16 +126,10 @@
                   <img class=" has-object-fit-cover" style="height: 100%;" src="/assets/images/blog/chat.webp">
                 </figure>
               </div>
-            </div>
-            {% for post in site.enPosts %}
-   
+            </div> -->
+            {% for post in site.enPosts reversed %}
               {% include listBox.html post=post %}
             {% endfor %}
-
-            {% for post in site.enGlossary %}
-            <p>{{post.title}}</p>
-          {% endfor %}
-
             
           </div>
         </div>
