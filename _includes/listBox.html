@@ -1,10 +1,10 @@
 {% if include.post %}
-<a class="list-item box" href="{{post.url}}">
+<a class="list-item box" href="{{post.url}}.html">
     <div class="list-item-content px-4">
-      <div class="list-item-title is-flex is-justify-content-space-between text-para-3 ">
-        <p>{{ post.title }}</p> 
+      <div class="list-item-title is-flex is-justify-content-space-between">
+        <p class=" text-para-2 ">{{ post.title }}</p> 
       </div>
-      <div class="list-item-description text-para-2">{{ post.description }}</div>
+      <div class="list-item-description text-para-3">{{ post.description }}</div>
       <span class="has-text-weight-normal has-text-grey mt-4">{{ post.date | date: "%d %b %Y" }}</span>
     </div>
     <div class="list-item-image">
