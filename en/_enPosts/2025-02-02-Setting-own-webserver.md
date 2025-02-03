@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Linux + Ubuntu + Apache - Buying your own domain name and hosting it in your own server (To be Continue)
+title: Linux + Ubuntu + Apache - Buying your own domain name and hosting it in your own server 
 description: Starting with a youtube/Udemy tutorial developer, I am always struggling with hosting my own server without paying much. 
 lang: en
 imageSrc: /assets/images/blog/Setting-own-webserver.png
@@ -86,5 +86,3 @@ Set open TCP port 80 for http and port 443 for https.
 **getssl** is a package to obtain free SSL certificates from letsencrypt ACME server Suitable for automating the process on remote servers, I followed the readme to the following link:
 [https://github.com/srvrco/getssl?tab=readme-ov-file#getting-started](https://github.com/srvrco/getssl?tab=readme-ov-file#getting-started)
 
-
-## Summary
