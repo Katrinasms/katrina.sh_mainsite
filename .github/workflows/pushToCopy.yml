@@ -16,7 +16,7 @@ jobs:
         with:
           repository: Katrinasms/katrina.sh_site
           path: _site
-          token: ${{ secrets.KATRINA_SH_SITE }}
+          token: ${{ secrets.KATRINASHSITE }}
       - name: Build the site in the jekyll/builder container
         run: |
           docker run \
