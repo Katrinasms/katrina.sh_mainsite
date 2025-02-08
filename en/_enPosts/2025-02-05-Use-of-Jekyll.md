@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: My Journey with Jekyll - Steps and Insights for Self-Hosting a Static Site
-description: Starting with a youtube/Udemy tutorial developer, I am always struggling with hosting my own server without paying much. 
+description: But when I wanted my website live — when it came to hosting the website — I had very little idea about what I could do.
 lang: en
 imageSrc: /assets/images/blog/jekyll-og.png
 mayLikes: [Setting-own-webserver]
@@ -15,7 +15,7 @@ I still remember my first serious website, [https://penguintravelworld.com/](htt
 
 These are amazing tools, and I was able to create a beautiful UI and UX in a reasonable time. I also tried to create the backend in Express.js (testing it myself), and it worked locally on my machine.
 
-But when I wanted my website live—when it came to hosting the website—I had very little idea about what I could do.
+> But when I wanted my website live — when it came to hosting the website — I had very little idea about what I could do.
 
 As usual, I followed some articles and tutorials about using Vercel, which is free, which is good. For my backend in Express.js, I didn't know where I could host it. Since free hosting on Heroku is no longer available, I ended up using a site called railway.com to host it, which cost around \$10 per month for hosting a single Git repository. This isn't a big amount, but as it is more like a passionate project, I was preferring some free or cheap resources.
 

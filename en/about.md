@@ -18,7 +18,7 @@ My journey has been anything but conventional—starting as a **noob** who follo
 <br />
 <br />
 
-With the help from universe, I met an amazing experienced software engineer who shared me lots of trick in programming, which suggested me many **different programming solutions, tech stack or better way and attitude in working with programming**. 
+With the magic of digital nomading, I met an amazing [<span style="color: #746D69;  font-weight: bold">experienced software engineer</span>](https://www.aye.sh) who shared me lots of trick in programming, which suggested me many **different programming solutions, tech stack or better way and attitude in working with programming**. 
 <br />
 <br />
 
