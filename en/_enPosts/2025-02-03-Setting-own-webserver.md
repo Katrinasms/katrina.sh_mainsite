@@ -1,9 +1,10 @@
 ---
 layout: posts
-title: Linux + Ubuntu + Apache - Buying Your Own Domain Name and Hosting It on Your Own Server
+title: Self-Hosting Your Domain and Server -A Comprehensive Guide to Choosing a Domain Name, Server Provider, and Using Linux, Ubuntu, and Apache
 description: Starting as a YouTube/Udemy tutorial developer, I have always struggled with hosting my own server without paying much.
 lang: en
 imageSrc: /assets/images/blog/Setting-own-webserver.png
+mayLikes: [Use of Jekyll]
 ---
 
 ## My Previous Struggle

@@ -1,9 +1,10 @@
 ---
 layout: posts
-title: Use of Jekyll
+title: My Journey with Jekyll - Steps and Insights for Self-Hosting a Static Site
 description: Starting with a youtube/Udemy tutorial developer, I am always struggling with hosting my own server without paying much. 
 lang: en
 imageSrc: /assets/images/blog/jekyll-og.png
+mayLikes: [Setting-own-webserver]
 ---
 
 ## My Struggle:
