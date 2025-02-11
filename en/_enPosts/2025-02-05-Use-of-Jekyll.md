@@ -7,7 +7,7 @@ imageSrc: /assets/images/blog/jekyll-og.png
 mayLikes: [Setting-own-webserver]
 ---
 
-## My Struggle:
+### **My Struggle:**
 
 Nowadays, most of the beautiful online tutorials are teaching JavaScript and React frameworks.
 
@@ -24,7 +24,7 @@ And for the domain name, I used GoDaddy, which in the end cost me a lot.
 **TL;DR:** Although I created a website using create-react-app and Express.js, my lack of knowledge limited me to using third-party web hosting services to launch the frontend and backend, and it cost me money.
 
 
-## What I Learned:
+### **What I Learned:**
 
 So after some days, I came up with another idea about hosting my own travel blog, as I do want to record and share my experiences in traveling. Thanks to my very experienced friend, he taught me many fundamental ways to create a website. Although most of the frameworks and languages are from quite a long time ago (when you have an error and search on StackOverflow, most of the questions and answers are more than 10 years old).
 

@@ -7,7 +7,7 @@ imageSrc: /assets/images/blog/Setting-own-webserver.png
 mayLikes: [Use of Jekyll]
 ---
 
-## My Previous Struggle
+### **My Previous Struggle**
 
 Starting as a YouTube/Udemy tutorial developer, I have always struggled with hosting my own server without paying much.
 
@@ -20,7 +20,7 @@ It is understandable that most of the tutorials teaching how to make full-stack 
 - SiteGround
 - GoDaddy
 
-## What I Did Differently This Time
+### **What I Did Differently This Time**
 
 After some time, I met a friend who taught me lots of useful ways to build a server. I would like to record it in this article for myself and for everyone who is sharing the same struggles that I have.
 
