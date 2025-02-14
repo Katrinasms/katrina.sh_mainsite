@@ -2248,3 +2248,7 @@ pre[class*=language-] {
     background: var(--c-bg-type-def, rgba(235, 235, 235, .9));
     font-style: italic;
 }
+.beat {
+    display: inline-block;
+    transform: scale(1);
+      }
