@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: My Journey with Automation Tool - Use of Cron
-description: When I started working on web applications, I used to write my own CSS, and I found it pretty annoying to handle the responsiveness of the application.
+description: There is a time, I forget to renew the certificate and fail to access the https of website. That's why a automation tool would be important for me.
 lang: en
 imageSrc: /assets/images/blog/cron-jobs.png
 tag: []

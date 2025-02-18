@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: My Journey with Workflow Automation Tool - Use of Shell Script
-description: I tried to use airdrop, but the format of photos are .HEIC, not a normal web broswer support format and the size of photos is HUGE!
+description: When I was working on my travel blog or other side projects, I often faced the following challenges
 lang: en
 imageSrc: /assets/images/blog/gnu-bash-logo.png
 tag: []
