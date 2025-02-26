@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Understand what is HTTP Protocol
-description: I tried to use airdrop, but the format of photos are .HEIC, not a normal web broswer support format and the size of photos is HUGE!
+description: When working on website setup, hosting, certificates, and the corresponding ways to structure and configure the site nicely in HTML/CSS/JS, I can follow steps and tools to complete it.
 lang: en
 imageSrc: /assets/images/blog/http_protocol.jpg
 tag: []
