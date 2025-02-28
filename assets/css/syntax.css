@@ -1,0 +1,77 @@
+/* Base styles for code blocks */
+.highlight pre {
+    background-color: #f7f7f7; /* Light background */
+    color: #333; /* Dark text */
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid #ddd; /* Light border */
+}
+
+/* Line numbers */
+.highlight .lineno {
+    color: #aaa;
+}
+
+/* Keywords */
+.highlight .kd,
+.highlight .kw {
+    color: #007acc; /* Blue */
+    font-weight: bold;
+}
+
+/* Function names */
+.highlight .nf {
+    color: #d73a49; /* Red */
+}
+
+/* Strings */
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh {
+    color: #032f62; /* Dark blue */
+}
+
+/* Comments */
+.highlight .c,
+.highlight .cm {
+    color: #6a737d; /* Grey */
+    font-style: italic;
+}
+
+/* Numbers */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo {
+    color: #005cc5; /* Dark blue */
+}
+
+/* Class names */
+.highlight .nc {
+    color: #e36209; /* Orange */
+    font-weight: bold;
+}
+
+/* Constants */
+.highlight .no {
+    color: #e36209; /* Orange */
+    font-weight: bold;
+}
+
+/* Tags */
+.highlight .nt {
+    color: #22863a; /* Green */
+    font-weight: bold;
+}
+
+/* Variables */
+.highlight .nv {
+    color: #333;
+}

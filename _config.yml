@@ -1,3 +1,9 @@
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
 title: Start with K
 email: katrinashui2023@gmail.com
 description:
@@ -5,6 +11,7 @@ description:
   ch: 分享從零度開始的編碼經歷
 baseurl: ""
 url: ""
+
 
 # Build settings
 plugins:
@@ -36,3 +43,5 @@ defaults:
       path: "en/_enGlossary"
     values:
       layout: default
+
+      
