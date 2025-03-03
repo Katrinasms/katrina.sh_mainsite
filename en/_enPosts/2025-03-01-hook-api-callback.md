@@ -18,7 +18,7 @@ While working on various programming projects (e.g., Telegram Bot, WordPress, Re
 
 - **Hook:** A broad concept that goes by different names depending on the context (e.g., webhook, WordPress hook, React hook). A hook allows programmers to insert external or custom code into the lifecycle of a framework. The specific points or methods for injecting callbacks are typically called hooks.
 
-- **Callback:** A function that is triggered later based on certain conditions or events. More details can be found in my [previous article](https://katrina.sh/dsggs).
+- **Callback:** A function that is triggered later based on certain conditions or events. More details can be found in my [previous article](https://katrina.sh/en/post/2025-02-28-function-callback.html).
 
 ### **Use-cases**
 Based on my experience, I’d like to share how these three concepts—API, hook, and callback—are applied in WordPress, Telegram bots, and React.
