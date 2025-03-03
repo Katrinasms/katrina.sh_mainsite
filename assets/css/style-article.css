@@ -620,7 +620,7 @@ a.navbar-item1:focus, a.navbar-item1:focus-within, a.navbar-item1:hover {
 }
 .content h3 {
     font-size: 1.5em;
-    margin-bottom: .6666em;
+    /* margin-bottom: .6666em; */
 }
 .content h3:not(:first-child) {
     margin-top: 2em;
