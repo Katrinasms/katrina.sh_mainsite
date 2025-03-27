@@ -30,4 +30,19 @@ Since there is many components, the possible combination is a lot, let's see how
 > At the same time, as I am located in Hong Kong, I realized that the price of GPU display card, especially the 50 series is pretty expansive (at least 50% more than the price stated in official website) and also out of stock. Wonder what card I would end up with ;,)
 
 ### Step 2: Understanding the relationship of hardware and performance
+
+For selection of CPU:
+I understand that we can follow bench hierarchy to search for the desire processing model. 
+
+**CPU Benchnark:** [https://www.tomshardware.com/reviews/cpu-hierarchy,4312.html](https://www.tomshardware.com/reviews/cpu-hierarchy,4312.html)
+
+GPU:
+There are few criteria to be consider when selecting GPU. Based on my understanding the most popular option is Nvidia, AMD and Mac.
+
+- VRAM
+    - VRAM, or Video Random Access Memory, is a type of specialized memory used primarily by graphics processing units (GPUs) to store and process data related to rendering images, videos, and other visual computations. In the context of large language models (LLMs), VRAM plays a critical role when these models are run on GPUs, which is common for training and inference due to the parallel processing power GPUs provide
+
+
+
+
 TBC
