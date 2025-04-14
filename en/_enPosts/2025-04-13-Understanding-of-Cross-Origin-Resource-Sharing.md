@@ -3,7 +3,7 @@ layout: posts
 title: Understanding of CORS (Cross Origin Resource Sharing)
 description: Access to fetch at 'Your API URL' from origin 'Your Frontend URL' has been blocked by CORS policy, No 'Access-Control-Allow-Origin' header is present on the requested resource." 
 lang: en
-imageSrc: /assets/images/blog/Pre-flight-Request.png
+imageSrc: /assets/images/blog/Pre-flight-Request1.png
 tag: [local-llm-computer]
 mayLikes: [CDN-for-image]
 ---
