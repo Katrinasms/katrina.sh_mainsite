@@ -39,10 +39,11 @@ I understand that we can follow bench hierarchy to search for the desire process
 GPU:
 There are few criteria to be consider when selecting GPU. Based on my understanding the most popular option is Nvidia, AMD and Mac.
 
-- VRAM
+https://www.videocardbenchmark.net/
+
+- VRAMc
     - VRAM, or Video Random Access Memory, is a type of specialized memory used primarily by graphics processing units (GPUs) to store and process data related to rendering images, videos, and other visual computations. In the context of large language models (LLMs), VRAM plays a critical role when these models are run on GPUs, which is common for training and inference due to the parallel processing power GPUs provide
 
 
 
 
-TBC
