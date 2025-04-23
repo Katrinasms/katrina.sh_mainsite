@@ -9,7 +9,7 @@ mayLikes: [CDN-for-image]
 ---
 
 ## **My Struggle**
-After setting up my own [personal blog](penguingogo.com) and a few other websites, I started thinking about promotion. 
+After setting up my own [personal blog](https://penguingogo.com) and a few other websites, I started thinking about promotion. 
 
 The first and easiest step that came to mind was creating a mailbox under my own domain name—because it looks cool! Haha. Plus, it looks much more professional than sending emails from a Gmail account or another email provider.
 
