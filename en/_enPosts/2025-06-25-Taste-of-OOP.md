@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Taste of Object Oriented Program (OOP)
-description:  I wanted to add a subscription mail list to connect with my audience. While many SaaS platforms offer email management, I preferred a minimal, authentic solution. So, I decided to build my own mail list application.
+description:  By the time I realized that skipping OOP had come back to bite me, refactoring everything felt almost too late.
 lang: en
 imageSrc: /assets/images/blog/oop.png
 tag: [local-llm-computer]
@@ -15,7 +15,7 @@ After completing the tutorial and starting my first real project, I naturally le
 
 As **the project grew more complex**, I kept **adding variables and tweaking existing functions**, sometimes hardcoding logic directly into them. Whenever there was a small change in the data structure, I had to revisit multiple parts of the code just to make sure things didn’t break. It became a **struggle to add new features**. And become less motivated and tired of my code... 
 
-B**y the time I realized that skipping OOP had come back to bite me**, refactoring everything felt almost too late.
+**By the time I realized that skipping OOP had come back to bite me**, refactoring everything felt almost too late.
 
 Recently, I started building a new SaaS project. This time, instead of diving straight into writing functions, I took some time to study classes and structured the project with an object-oriented approach from the beginning.
 
