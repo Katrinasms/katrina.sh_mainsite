@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Taste of Object Oriented Program (OOP)
-description:  By the time I realized that skipping OOP had come back to bite me, refactoring everything felt almost too late.
+description: By the time I realized that skipping OOP had come back to bite me, refactoring everything felt almost too late.
 lang: en
 imageSrc: /assets/images/blog/oop.png
 tag: [local-llm-computer]
