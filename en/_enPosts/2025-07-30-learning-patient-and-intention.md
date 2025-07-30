@@ -1,15 +1,14 @@
 ---
 layout: posts
-title: Power of Patience and Intention
+title: Learning patience and intention
 description: Coming from an Asian background where external validation often shapes our early experiences, I sometimes find myself looking outward to define my worth—especially when friends outside the programming world ask about my progress.
 lang: en
-imageSrc: /assets/images/blog/power-of-patient-and-intention.png
+imageSrc: /assets/images/blog/learning-patient-and-intention.png
 tag: [local-llm-computer]
 mayLikes: [CDN-for-image]
 ---
 
-
-## **My Struggle: Learning to Code Without Losing Myself**
+## **My Struggle**
 
 [This article is a bit personal, but feel like is one of the journey I am experiencing, hope to record it down.]
 
@@ -37,6 +36,6 @@ What matters most is intention. Ask yourself: Why are you doing this? Is it for 
 
 Even the smallest decisions—how to structure a function, whether to use a class, which pattern to follow—deserve thought. Read more, compare approaches, and make choices that feel right for you. Others may disagree, but that's okay.
 
-Eventually, you’ll find yourself not just growing in knowledge, but in life. Because intentionality isn’t just a coding skill—it’s a way of being.
+Eventually, you’ll find yourself not just growing in knowledge, but in life. Because intentionality isn’t just a coding skill—it’s a way of being. And let's see how patience and intention will bring us to!
 
 ---
