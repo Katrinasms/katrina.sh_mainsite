@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Power of Patience and Intention
-description: 
+description: Coming from an Asian background where external validation often shapes our early experiences, I sometimes find myself looking outward to define my worth—especially when friends outside the programming world ask about my progress.
 lang: en
 imageSrc: /assets/images/blog/power-of-patient-and-intention.png
 tag: [local-llm-computer]
