@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" href="/assets/images/logo/K.png" >
+    <title>Happy Birthday! Ayesh</title>
+   <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            overflow-x: hidden;
+        }
+
+        .php-container {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .php-header {
+            background-color: #333;
+            border: 2px solid #555;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .console-output {
+            background-color: #0a0a0a;
+            border: 2px solid #333;
+            border-radius: 8px;
+           
+            margin: 20px 0;
+            font-size: 16px;
+            line-height: 1.2;
+            white-space: pre-wrap;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 480px) {
+            .console-output{
+                font-size: 10px;
+            }
+            .php-header{
+                font-size: 10px;
+            }
+        }
+
+        .cake-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .countdown-container {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #2a2a2a;
+            border: 2px solid #555;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .countdown {
+            font-size: 48px;
+            color: #ff6b6b;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+            margin: 20px 0;
+        }
+
+        .birthday-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-in-out;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .birthday-reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .birthday-message {
+            font-size: 36px;
+            color: #ffd700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            margin: 20px 0;
+        }
+
+        .photo-gallery {
+            margin-top: 60px;
+        }
+
+        .photo-item {
+            display: flex;
+            flex-direction: column;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border: 2px solid #555;
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s ease-out;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .photo-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .photo-item img{
+            align-self: center;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #333, #555);
+            border: 2px dashed #777;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .photo-caption {
+            color: #ccc;
+            font-size: 16px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .php-comment {
+            padding-right: 30px;
+            color: #888;
+            font-style: italic;
+        }
+
+        .php-variable {
+            color: #9cdcfe;
+        }
+
+        .php-string {
+            color: #ce9178;
+        }
+
+        .php-keyword {
+            color: #569cd6;
+        }
+
+        .blinking-cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: firework 2s ease-out forwards;
+        }
+
+        @keyframes firework {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(20); opacity: 0; }
+        }
+
+
+        .birthday-item {
+            position: absolute;
+            top: -50px;
+            font-size: 20px;
+            pointer-events: none;
+            animation: fall linear;
+            z-index: 10;
+        }
+
+          .photo-gallery {
+            width: 100%;
+            
+            margin-top: 50px;
+        }
+
+        .photo-container {
+            margin: 50px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .photo-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #2c2c54, #40407a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 1.5em;
+            border: 2px dashed #555;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .photo-placeholder:hover {
+            background: linear-gradient(45deg, #3c3c64, #50508a);
+            border-color: #777;
+        }
+
+
+        .confetti {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: fall linear, spin linear;
+        }
+
+        .confetti.pink { background: #ff69b4; }
+        .confetti.yellow { background: #ffd700; }
+        .confetti.blue { background: #00bfff; }
+        .confetti.green { background: #32cd32; }
+        .confetti.purple { background: #9370db; }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+       
+    </style>
+    <style>
+        .hori-carousell{
+            display: flex;
+            overflow: auto;
+        }
+
+        .instruction {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            font-size: 12px;
+            color: #888;
+            max-width: 250px;
+        }
+
+        .photo-caption{
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+     <div class="php-container">
+        <div class="php-header">
+            <span class="php-comment">// PHP Birthday Celebration Script</span><br>
+            <span class="php-keyword">&lt;?php</span><br>
+            <span class="php-variable">$Happy</span> = <span class="php-string">"Birthday"</span>;<br>
+            <span class="php-variable">$Ayesh</span> = <span class="php-keyword">Karunaratne</span>;<br>
+            <span class="php-keyword">?&gt;</span>
+        </div>
+
+        <div class="console-output">
+            <div class="php-comment">   // Console output:</div>
+            <div><span id="console-text"></span><span class="blinking-cursor">_</span></div>
+            
+        </div>
+
+        <div class="cake-container">
+            <div class="console-output" id="cake-display"></div>
+        </div>
+
+        <div class="countdown-container">
+            <div class="php-header">
+                <span class="php-keyword">while</span>(<span class="php-variable">$countdown</span> > 0) {<br>
+                &nbsp;&nbsp;<span class="php-keyword">echo</span> <span class="php-string">"Preparing birthday surprise..."</span>;<br>
+                &nbsp;&nbsp;<span class="php-variable">$countdown</span>--;<br>
+                }
+            </div>
+            <div>
+            <div class="countdown" id="countdown">10</div>
+            <div>seconds until the big reveal!</div>
+            </div>
+           
+        </div>
+         <div class="birthday-reveal" id="birthday-reveal">
+            <div class="php-header">
+                <span class="php-keyword">if</span>(<span class="php-variable">$birthday</span>) {<br>
+                &nbsp;&nbsp;<span class="php-keyword">echo</span> <span class="php-string">"🎉 HAPPY BIRTHDAY! 🎉"</span>;<br>
+                }
+            </div>
+            <div class="birthday-message" id="birthday-name">
+                🎉 HAPPY BIRTHDAY AYESH! 🎉
+            </div>
+        </div>
+        <div class="photo-gallery">
+            <div class="php-header">
+                <span class="php-variable">$memories</span> = [<br>
+                &nbsp;&nbsp;<span class="php-string">"ayesh-carousell"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"egg-coffee.jpg"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"christmas-carousell"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"hanoi-foods-carousell"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"rice_and_curry.jpg"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"sapa.jpg"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"malaysia.jpg"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"sri-lanka-carousell"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"ha-giang.jpg"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"hiking-carousell"</span>,<br>
+                ];<br><br>
+                <span class="php-keyword">foreach</span>(<span class="php-variable">$memories</span> <span class="php-keyword">as</span> <span class="php-variable">$photo</span>) {
+            </div>
+
+             <div class="photo-item">
+                   <div class="hori-carousell">
+                        <img src="/assets/images/ayesh//00_ayesh_elephant.jpg" alt="egg_coffee" height="600">
+                        <img src="/assets/images/ayesh//00_ayesh_mountain.jpg" alt="egg_coffee"height="600">
+                        <img src="/assets/images/ayesh//00_ayesh_hike.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//00_ayesh_sapa.jpg" alt="egg_coffee" height="600">
+                        <img src="/assets/images/ayesh//00_ayesh_sun.jpg" alt="egg_coffee" height="600">
+                    </div>
+                <div class="photo-caption">// The BDAY BOY, BRAVE, SMART with perfect smile and perfect hair (took 10 min to fix his hair :))</div>
+            </div>
+            <div class="photo-item">
+                <img src="/assets/images/ayesh//01_egg_coffee.jpg" alt="egg_coffee" height="600">
+                <div class="photo-caption">// How everything start, a random meet up in Couchsurfing</div>
+            </div>
+            <div class="photo-item">
+                   <div class="hori-carousell">
+                        <img src="/assets/images/ayesh//02_christmas_costume.jpg" alt="christmas_costume"  height="600">
+                        <img src="/assets/images/ayesh//02_christmas_costume2.jpg" alt="christmas_costume" height="600">
+                    </div>
+                <div class="photo-caption">// It's Christmas time, we celebrate christmas tgt with buffet and wine</div>
+            </div>
+            <div class="photo-item">
+                   <div class="hori-carousell">
+                        <img src="/assets/images/ayesh//03_hanoi_food.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//03_hanoi_pho.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//03_hanoi_banhmi.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//03_hanoi_coffee.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//03_hanoi_pizza4p.jpg" alt="egg_coffee" height="600">
+                    </div>
+                <div class="photo-caption">// We tried lots of cuisine in Hanoi~</div>
+            </div>
+            <div class="photo-item">
+                 <img src="/assets/images/ayesh//04a_chicken_rice.jpg" alt="rice and curry" height="600">
+                <div class="photo-caption">// It's a short goodbye, you cooked a rice and curry~</div>
+            </div>
+            <div class="photo-item">
+                 <img src="/assets/images/ayesh//04_sapa.jpg" alt="sapa"  height="600">
+                <div class="photo-caption">// We travelled to Sapa and encountered one of the best moment</div>
+            </div>
+            <div class="photo-item">
+                 <img src="/assets/images/ayesh//05_malaysia.jpg" alt="malaysia" height="600">
+                <div class="photo-caption">// Eating malaysia rice~ for a short transition</div>
+            </div>
+            <div class="photo-item">
+                  <div class="hori-carousell">
+                        <img src="/assets/images/ayesh//06_sri_lanka_elephant.jpg" alt="egg_coffee"height="600">
+                        <img src="/assets/images/ayesh//06_sri_lanka_food.jpg" alt="egg_coffee" height="600">
+                        <img src="/assets/images/ayesh//06_sri_lanka_tuktuk.jpg" alt="egg_coffee" height="600">
+                        <img src="/assets/images/ayesh//06_sri_lanka.jpg" alt="egg_coffee"  height="600">
+                    </div>
+                <div class="photo-caption">// We travelled to Sri Lanka, good food and elephant!!!</div>
+            </div>
+             <div class="photo-item">
+                 <img src="/assets/images/ayesh//07_ha_giang.jpg" alt="hiking_w_friends"  height="600">
+                <div class="photo-caption">// We travel to Ha Giang!!</div>
+            </div>
+             <div class="photo-item">
+                  <div class="hori-carousell">
+                        <img src="/assets/images/ayesh//08_hiking_group.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//08_hiking.jpg" alt="egg_coffee" height="600">
+                    </div>
+                <div class="photo-caption">// We met people in hiking group and hiking </div>
+            </div>
+
+            <div class="php-header" style="margin-top: 40px;">
+                }<br>
+                <span class="php-comment">// Memory will be</span><br>
+                <span class="php-keyword">continue;</span>
+                <span class="php-keyword">?&gt;</span><br>
+                <span class="php-comment">// Looking forwards for what is next!</span><br>
+            </div>
+        </div>
+    </div>
+    <div class="fireworks" id="fireworks"></div>
+
+    <div class="instruction">
+        <strong>For Developers:</strong><br>
+        Plz check the console!
+    </div>
+
+    <script>
+        const cake = `
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢔⠊⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣳⣶⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣟⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡿⣷⣯⢷⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡶⠾⠛⠛⠻⢿⣿⣳⣯⣟⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠟⠁⣀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠻⢶⣄⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⡰⡆⠀⠀⠀⠀⠀⠀⢿⣄⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠛⠀⠀⠀⠀⠙⣧⡀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⣧⡎⠀⠀⠀⠀⠀⠀⠀⠉⣿⠛⠷⠶⣦⣤⣤⣤⣤⣤⣤⣴⠾⠓⠀⠀⠘⣷⡀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⣻⣇⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣷⠀⠀⠀
+        ⠀⡰⣚⡉⠉⣉⡉⠉⣠⣁⣈⠬⡇⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡇⠀⠀
+        ⠀⢇⠀⠈⠉⠀⠈⠉⠀⠀⠀⣰⠃⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡄⠈⣿⠀⠀
+        ⠐⠛⠛⠛⢻⣿⣿⣿⡿⠛⠛⠛⠛⠀⠀⢠⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⢹⡆⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠈⠻⣆⠀⠀⠀⠀⢠⡿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠇⠀⠘⣧⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢷⣄⣀⣰⡟⠁⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⣿⡄
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠉⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⢹⡇
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣏⠀⠀⠀⠘⣷
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡿⠀⠀⠀⠀⣿
+        `
+        console.log("%c🎉               SURPRISE!                     🎉", 
+                                "color: #48AAAD; font-size: 20px; font-weight: bold;");
+        console.log(
+                
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⣴⠂⠀⠀⡀⠀⠀⢀⣄⠀⠀⡀⢀⡀⠀⠀⣰⣷⠟⠀⠀⠀⠀⠀⠀⠀⢠⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⡄⠀⠀⠀⡇⢰⢃⡴⢀⡾⠁⢰⡇⣸⢣⠀⠀⢻⢸⠇⠀⢰⣿⠏⠀⠀⠀⠀⡀⠀⢀⡿⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣏⢧⠀⠀⠘⢧⡞⣾⢁⡟⠀⠀⡾⢀⣷⡏⠀⠀⢸⢸⠀⢠⣿⠇⠀⣴⠃⢸⢻⡇⠀⢸⢿⠇⣰⠆⢀⡴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⣤⡀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠙⣞⣧⡄⡀⠘⣹⢡⠞⠀⠀⢀⡇⠸⣼⠁⠀⠀⠸⠈⢀⣾⡟⢀⡾⠁⠀⢸⣾⠀⢠⡟⡞⣠⠋⣠⠞⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⢨⡿⢦⡙⢷⣄⠀⠀⠀⠀⠀⠀⠹⣎⢘⣿⠈⠁⠀⠀⠀⠀⣸⠁⢠⠇⠀⠀⠀⠀⢠⡾⠉⠀⠞⠁⠀⠀⢸⡿⠀⠈⢱⠏⢁⡼⢫⠞⠁⠀⠀⠀⠀⠀⢀⡤⠄⣠⡴⠃⠀⠀",
+        "⠀⠀⠀⠘⢷⣄⠙⢦⡙⢦⡀⠀⢠⡆⠀⠀⠘⣾⠋⡇⠀⠀⠀⠀⠠⠿⠀⠈⠀⠀⠀⠀⣰⣻⠇⠀⠀⠀⠀⠀⠀⠈⠁⠀⢠⣿⡄⢘⡴⠋⠀⠀⠀⠀⠀⣠⡴⣋⡵⠛⠉⠀⠀⠀⠀",
+        "⡆⠀⠀⠀⠀⠉⠳⣄⡙⢶⡝⢢⣿⡇⠀⠀⠀⠹⣾⡇⠀⠀⠀⠀⠀⡄⠀⠀⠀⠀⠀⢸⣧⡟⠀⠀⠀⠀⢰⡄⠀⠀⠀⠀⣾⣸⠃⠈⠀⠀⠀⠀⠀⣠⡞⠁⠀⢉⣀⣠⡤⠴⠶⠀⠀",
+        "⡀⠰⠶⣄⣀⠀⠀⠀⠙⢶⡀⢿⢨⡇⠀⠀⠀⢲⣮⢿⡇⠀⠀⠀⣾⢷⠀⠀⠀⠀⠀⣾⣿⡆⠀⠀⠀⠀⣼⢻⡄⠀⠀⢀⣽⣯⡆⠀⠀⠀⠀⢀⡼⣿⠀⠘⠉⠭⠶⠶⠶⠶⠿⠂⠀",
+        "⠛⠓⠦⠤⣌⣙⣓⠦⡄⠀⠀⢸⣿⣃⠀⠀⠀⢸⡇⢸⡇⠀⠀⠀⠻⣸⡇⠀⠀⠀⠀⡇⠀⡇⠀⠀⠀⠀⢷⣸⠇⠀⠀⠘⡟⢹⡇⠀⠀⠀⠀⣼⣴⠇⠀⢠⣀⣀⡀⠒⠒⠦⠤⠤⠄",
+        "⠀⠀⠀⠀⠀⢈⣉⣙⣲⡄⠀⣿⠿⢻⡄⠀⠀⢸⡇⢸⡇⠀⠀⠀⢤⣿⣧⡀⠀⠀⠀⡇⠀⡇⠀⠀⠀⠀⣮⣿⣤⠀⠀⠀⡇⢸⠃⠀⠀⠀⢸⠿⣽⡄⠀⠸⣍⡉⠉⠉⠛⠒⠒⠒⠶",
+        "⠐⠒⢒⣛⣯⣭⠭⠝⢋⡀⠀⢻⠀⢸⡇⠀⠀⢸⡇⢸⡇⠀⠀⠀⢸⠉⢿⡇⠀⠀⠀⡇⠀⡇⠀⠀⠀⠀⢻⠉⣿⠀⠀⠀⡇⢸⡆⠀⠀⠀⣿⠀⣿⠀⠈⠓⠮⣭⡓⠲⢦⣄⠀⠀⠀",
+        "⠈⠉⠉⠀⣀⣤⠶⠒⠉⠁⠀⢸⠀⢸⣇⠀⠀⠘⡇⢸⡇⠀⠀⠀⢸⠀⢸⡇⠀⣀⢀⡇⠰⣧⠀⠀⠀⠀⢼⠀⢻⠀⠀⠀⡇⢸⠇⠀⠀⢀⡇⢰⡿⠀⠀⠀⠀⠀⠉⠙⠶⢧⣦⣀⡀",
+        "⡤⠶⠚⠋⠁⠀⠀⠀⠀⠀⠀⢸⡄⠘⣿⣀⣠⣤⡇⢸⣷⠖⠚⠛⢻⠀⢸⡏⠉⠉⠉⡇⠀⣟⠉⠛⠛⠛⣿⠀⣸⠷⠶⣤⡇⢸⣆⡀⠀⢸⠁⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡼⣇⠀⣿⠀⠈⢿⣻⣾⣿⡷⠀⠀⢸⠄⢸⡇⠀⠰⣾⢿⣼⣟⣶⠀⠀⠀⢸⠀⢸⠀⢸⣜⡇⢸⣇⣉⠙⣿⠀⣿⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⢠⡾⠁⢀⣿⠀⣿⡀⠀⠀⠉⠉⠉⠀⠀⠀⢸⠀⢸⡇⠀⠀⠈⠛⠛⠛⠉⠀⠀⠀⢸⡄⢸⡀⠈⢷⣿⣿⣷⠛⢠⡿⢠⡇⠀⠙⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⢠⡏⠀⠀⢿⡙⠶⣟⣿⠇⠀⠀⠀⠀⠀⠀⠀⣸⠀⢸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣽⣇⣸⣷⡀⠀⠀⠀⠀⢰⡾⣇⣼⣧⡄⠀⠈⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀⠀⠈⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠻⣍⣳⣿⣯⡿⠀⠀⠀⠀⠈⠀⠀⠈⠹⣷⣭⣿⣾⠓⠀⠀⠀⠀⠘⠷⠮⠿⠾⠇⠀⠀⣹⡇⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⣼⡟⠀⣠⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣀⠀⢠⡷⣄⢹⣇⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠻⣶⡿⠋⢱⡏⠀⣀⣤⣤⣄⠀⠀⠀⠀⠀⠀⣠⣤⣤⣄⠀⠀⠀⠀⠀⣠⣶⣶⣴⡶⢶⡀⣠⣴⡶⠖⠲⣤⣄⠀⠀⢸⣿⠁⠙⠳⣼⠇⢻⡿⠛⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⢀⣴⡇⠀⠀⠉⠉⠉⠁⠀⠈⠳⣤⣄⣤⣶⠿⠋⠁⠀⠉⠳⣄⠀⢀⣴⡿⠃⠈⠉⠀⠈⠉⠉⠁⠀⠀⠀⠀⠉⠳⢦⣼⡿⠀⠀⠀⠀⠀⢸⣯⣧⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⣾⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡅⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣆⠀⢀⡀⠀⠀⠀⠀⠀⢀⣴⣿⣿⠉⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⣀⣠⣴⢿⣿⣾⣝⡶⢤⣀⣀⡀⠀⠰⣖⠺⠻⣿⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⠿⠘⢛⣿⣧⡤⢤⢤⣞⣿⠽⠿⠉⣿⠐⠛⠉⠉⠉⠉⠙⠛",
+        "⣤⠶⠛⠉⠀⠀⣼⣿⠀⠙⠻⢦⣯⣭⣉⣿⣿⣿⡇⣀⠻⡿⣯⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣠⡿⢻⡄⣀⣸⣷⡺⠿⠟⠛⠛⠁⠀⠀⠀⢻⢺⡇⠀⠀⠀⠀⠀⠀",
+        "⠁⠀⠀⠀⠀⠀⢻⡿⣆⠀⠀⠀⠀⠀⠉⠉⠉⠻⠟⠋⠳⢿⣧⣿⣝⢻⡖⠶⢶⠤⢤⣤⣤⡤⠤⠶⢖⣺⣋⣭⣗⣯⣾⣴⠋⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⣠⡾⣼⡷⠀⠀⠀⠀⠀⠀",
+        "⡿⠿⠛⠀⠀⠀⠀⠙⢿⡻⢦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠳⠿⠿⢿⣿⣶⡶⢶⣻⣿⡿⠿⣿⡿⠃⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡴⢞⡽⠾⠏⠀⠀⠀⠀⠀⠀⠶",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⢷⣭⣳⠦⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡤⢶⣛⣹⠿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⣤⣤⡼⠿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠴⠾⢯⣝⣿⣶⣤⠤⠤⢤⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣠⣤⠤⣤⣤⢴⠚⣛⣫⣭⡶⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⣤⣤⣤⣀⣤",
+        "⠀⢿⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠓⠲⠦⠾⠻⢿⣯⡽⠿⢿⣭⡽⠛⠳⠶⠶⠚⠉⠉⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣩⡿⠃⠀",
+        "⠀⠀⠙⠓⢶⣶⣤⣤⣶⡿⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣀⠀⠀⠀⠀⣀⣠⣴⡶⠛⠉⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠘⢿⣤⣀⣀⣀⣀⣀⣀⣠⣶⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⢶⣿⠶⠶⠿⠟⠛⠉⠁⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠛⠛⠛⠉⠻⢶⣤⣄⣀⣀⣀⣀⠀⣀⣀⣠⣞⣿⠗⠀⠀⠀⠀⠀⠀⣠⣾⡟⠀⠀⠀⠀⠀⠀⢀⣠⣴⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠛⠛⠛⠛⠛⡻⣧⣤⣤⣤⣤⣤⡤⠴⢟⣛⢻⡦⠦⠤⠴⠶⢾⠛⠛⡉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+        console.log("%c🎉          HAPPY BIRTHDAY, AYESH!!!             🎉", 
+                                "color: #051094; font-size: 20px; font-weight: bold;");
+        console.log("%c// TODO: Eat cake and debug less today! 🍰", 
+                                "color: #051094; font-size: 20px; font-weight: bold;");
+
+
+    </script>
+    <script>
+        function typeWriter(text, element, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+        const consoleElement = document.getElementById('console-text');
+
+        // Event 1 - TypeWriter
+        //typeWriter('   Loading birthday celebration...\n   Initializing PHP environment...\n   Ready! 🎉', consoleElement);
+
+        // Event 2 - Showing the Cake
+       // setTimeout(() => {
+       //     document.getElementById('cake-display').innerHTML = cake;
+       // }, 4800);
+
+        let countdownValue = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        // Event 3 - CountDown 10s
+
+   //     const countdownInterval = setInterval(() => {
+   //         countdownValue--;
+   //         countdownElement.textContent = countdownValue;
+            
+   //         if (countdownValue <= 0) {
+   //             clearInterval(countdownInterval);
+   //             revealBirthday();
+                // disappear countdown container  display=none
+   //             document.querySelector('.countdown-container').style.display = 'none';
+   //         }
+   //     }, 1000);
+
+        // Event 4 - Show Bday + Rain
+        function revealBirthday() {
+            document.getElementById('birthday-reveal').classList.add('show');
+            createFireworks();
+            startRain();
+        }
+
+        function createFireworks() {
+            const fireworksContainer = document.getElementById('fireworks');
+            
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.left = Math.random() * 100 + 'vw';
+                    firework.style.top = Math.random() * 100 + 'vh';
+                    firework.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                    
+                    fireworksContainer.appendChild(firework);
+                    
+                    setTimeout(() => {
+                        firework.remove();
+                    }, 2000);
+                }, i * 300);
+            }
+        }
+        
+
+         // Birthday Cake Rain
+        let rainActive = true;
+        let rainIntensity = 3; // items per 100ms
+        let rainInterval;
+
+        const birthdayEmojis = ['🎂', '🧁', '🎈', '🎁', '🎉', '🎊', '🥳', '🍰', '🎀', '⭐'];
+        const confettiColors = ['pink', 'yellow', 'blue', 'green', 'purple'];
+
+        function createBirthdayItem() {
+            const item = document.createElement('div');
+            const isEmoji = Math.random() > 0.3; // 70% chance for emoji, 30% for confetti
+            
+            if (isEmoji) {
+                item.className = 'birthday-item';
+                item.textContent = birthdayEmojis[Math.floor(Math.random() * birthdayEmojis.length)];
+                item.style.fontSize = Math.random() * 15 + 15 + 'px';
+            } else {
+                item.className = 'birthday-item confetti ' + confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                item.style.width = Math.random() * 8 + 6 + 'px';
+                item.style.height = item.style.width;
+            }
+            
+            item.style.left = Math.random() * 100 + 'vw';
+            item.style.animationDuration = Math.random() * 3 + 2 + 's';
+            item.style.animationDelay = Math.random() * 2 + 's';
+            
+            if (!isEmoji) {
+                item.style.animationName = 'fall, spin';
+            }
+            
+            document.body.appendChild(item);
+            
+            // Remove item after animation
+            setTimeout(() => {
+                if (item.parentNode) {
+                    item.parentNode.removeChild(item);
+                }
+                if (rainActive) {
+                stopRain();}
+            }, 8000);
+
+            
+        }
+
+        function startRain() {
+            if (rainActive) {
+                rainInterval = setInterval(() => {
+                    for (let i = 0; i < rainIntensity; i++) {
+                        createBirthdayItem();
+                    }
+                }, 200);
+            }
+        }
+
+        function stopRain() {
+            if (rainInterval) {
+                clearInterval(rainInterval);
+            }
+        }
+    
+
+        // Event 5 - Show photos with memories
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            const photoItems = document.querySelectorAll('.photo-item');
+            photoItems.forEach(item => {
+                if (isElementInViewport(item) || window.pageYOffset + window.innerHeight > item.offsetTop) {
+                    item.classList.add('visible');
+                }
+            });
+        }
+
+         // Throttled scroll handler
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(handleScroll);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            ticking = false;
+            requestTick();
+        });
+
+
+        // setTimeout(handleScroll, 5000);
+    </script>
+    <script>
+        function timeout(ms){
+            return new Promise(resolve => setTimeout(resolve, ms))
+        }
+
+        async function startSeq(){
+            document.querySelector('.countdown-container').style.display = 'none';
+            document.querySelector('.birthday-reveal').style.display = 'none';
+            document.querySelector('.photo-gallery').style.display = 'none';
+            document.querySelector('.instruction').style.display = 'none';
+
+
+            try{
+                typeWriter('   Loading birthday celebration...\n   Initializing PHP environment...\n   Ready! 🎉', consoleElement);
+                await timeout(4800);
+                document.getElementById('cake-display').innerHTML = cake;
+                await timeout(1000);
+                document.querySelector('.countdown-container').style.display = 'block';
+                const countdownInterval = setInterval(() => {
+                    countdownValue--;
+                    countdownElement.textContent = countdownValue;
+                    
+                    if (countdownValue <= 0) {
+                        clearInterval(countdownInterval);
+                        
+                        revealBirthday();
+                        // disappear countdown container  display=none
+                        document.querySelector('.countdown-container').style.display = 'none';
+                        document.querySelector('.birthday-reveal').style.display = 'block';
+                    }
+                }, 1000);
+                await timeout(10000);
+                document.querySelector('.photo-gallery').style.display = 'block';
+                document.querySelector('.instruction').style.display = 'block';
+                handleScroll()
+            }catch(e){
+                console.error('Error:',e)
+            }
+        }
+        startSeq();
+
+    </script>
+</body>
+</html>
