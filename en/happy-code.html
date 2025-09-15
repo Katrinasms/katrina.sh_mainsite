@@ -48,15 +48,7 @@
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        @media (max-width: 480px) {
-            .console-output{
-                font-size: 10px;
-            }
-            .php-header{
-                font-size: 10px;
-            }
-        }
-
+        
         .cake-container {
             text-align: center;
             margin: 40px 0;
@@ -200,7 +192,7 @@
 
 
         .birthday-item {
-            position: absolute;
+            position: fixed;
             top: -50px;
             font-size: 20px;
             pointer-events: none;
@@ -274,6 +266,18 @@
             }
         }
        
+        @media (max-width: 480px) {
+            .console-output{
+                font-size: 10px;
+            }
+            .php-header{
+                font-size: 10px;
+            }
+            .single-photo img{
+                width: 280px;
+            }
+        }
+
     </style>
     <style>
         .hori-carousell{
@@ -350,10 +354,10 @@
                 &nbsp;&nbsp;<span class="php-string">"christmas-carousell"</span>,<br>
                 &nbsp;&nbsp;<span class="php-string">"hanoi-foods-carousell"</span>,<br>
                 &nbsp;&nbsp;<span class="php-string">"rice_and_curry.jpg"</span>,<br>
-                &nbsp;&nbsp;<span class="php-string">"sapa.jpg"</span>,<br>
-                &nbsp;&nbsp;<span class="php-string">"malaysia.jpg"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"sapa-carousell"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"malaysia-carousell"</span>,<br>
                 &nbsp;&nbsp;<span class="php-string">"sri-lanka-carousell"</span>,<br>
-                &nbsp;&nbsp;<span class="php-string">"ha-giang.jpg"</span>,<br>
+                &nbsp;&nbsp;<span class="php-string">"ha-giang-carousell"</span>,<br>
                 &nbsp;&nbsp;<span class="php-string">"hiking-carousell"</span>,<br>
                 ];<br><br>
                 <span class="php-keyword">foreach</span>(<span class="php-variable">$memories</span> <span class="php-keyword">as</span> <span class="php-variable">$photo</span>) {
@@ -369,7 +373,7 @@
                     </div>
                 <div class="photo-caption">// The BDAY BOY, BRAVE, SMART with perfect smile and perfect hair (took 10 min to fix his hair :))</div>
             </div>
-            <div class="photo-item">
+            <div class="photo-item single-photo">
                 <img src="/assets/images/ayesh//01_egg_coffee.jpg" alt="egg_coffee" height="600">
                 <div class="photo-caption">// How everything start, a random meet up in Couchsurfing</div>
             </div>
@@ -387,19 +391,27 @@
                         <img src="/assets/images/ayesh//03_hanoi_banhmi.jpg" alt="egg_coffee"  height="600">
                         <img src="/assets/images/ayesh//03_hanoi_coffee.jpg" alt="egg_coffee"  height="600">
                         <img src="/assets/images/ayesh//03_hanoi_pizza4p.jpg" alt="egg_coffee" height="600">
+                        <img src="/assets/images/ayesh//03_hanoi_bun_cha.jpg" alt="egg_coffee" height="600">
                     </div>
                 <div class="photo-caption">// We tried lots of cuisine in Hanoi~</div>
             </div>
-            <div class="photo-item">
+            <div class="photo-item single-photo">
                  <img src="/assets/images/ayesh//04a_chicken_rice.jpg" alt="rice and curry" height="600">
                 <div class="photo-caption">// It's a short goodbye, you cooked a rice and curry~</div>
             </div>
             <div class="photo-item">
+                <div class="hori-carousell">
                  <img src="/assets/images/ayesh//04_sapa.jpg" alt="sapa"  height="600">
+                 <img src="/assets/images/ayesh//04_sapa_dinner.jpg" alt="sapa"  height="600">
+                 <img src="/assets/images/ayesh//04_sapa_nice_view.jpg" alt="sapa"  height="600">
+                 </div>
                 <div class="photo-caption">// We travelled to Sapa and encountered one of the best moment</div>
             </div>
             <div class="photo-item">
+                <div class="hori-carousell">
                  <img src="/assets/images/ayesh//05_malaysia.jpg" alt="malaysia" height="600">
+                 <img src="/assets/images/ayesh//05_malaysia_dinner.jpg" alt="malaysia" height="600">
+                 </div>
                 <div class="photo-caption">// Eating malaysia rice~ for a short transition</div>
             </div>
             <div class="photo-item">
@@ -408,15 +420,25 @@
                         <img src="/assets/images/ayesh//06_sri_lanka_food.jpg" alt="egg_coffee" height="600">
                         <img src="/assets/images/ayesh//06_sri_lanka_tuktuk.jpg" alt="egg_coffee" height="600">
                         <img src="/assets/images/ayesh//06_sri_lanka.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//06_sri_lanka_colombo_food.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//06_sri_lanka_curry_n_biscuit.jpg" alt="egg_coffee"  height="600">
                     </div>
                 <div class="photo-caption">// We travelled to Sri Lanka, good food and elephant!!!</div>
             </div>
              <div class="photo-item">
+                 <div class="hori-carousell">
                  <img src="/assets/images/ayesh//07_ha_giang.jpg" alt="hiking_w_friends"  height="600">
+                 <img src="/assets/images/ayesh//07_ha_giang_bike.jpg" alt="hiking_w_friends"  height="600">
+                 <img src="/assets/images/ayesh//07_ha_giang_us.jpg" alt="hiking_w_friends"  height="600">
+                 </div>
                 <div class="photo-caption">// We travel to Ha Giang!!</div>
             </div>
              <div class="photo-item">
                   <div class="hori-carousell">
+                        <img src="/assets/images/ayesh//08_hiking_cave.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//08_hiking_dinner.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//08_hiking_drink.jpg" alt="egg_coffee"  height="600">
+                        <img src="/assets/images/ayesh//08_hiking_river.jpg" alt="egg_coffee"  height="600">
                         <img src="/assets/images/ayesh//08_hiking_group.jpg" alt="egg_coffee"  height="600">
                         <img src="/assets/images/ayesh//08_hiking.jpg" alt="egg_coffee" height="600">
                     </div>
